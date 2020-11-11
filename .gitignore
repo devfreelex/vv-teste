@@ -2,6 +2,3 @@ node_modules
 .cache
 dist
 package-lock.json
-src/components/appHeader
-src/components/appMenu
-src/components/appHeader
