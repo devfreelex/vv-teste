@@ -1,6 +1,9 @@
 export default ({props, state}) => /*html*/ `
-    <div class="app-main-wrapper">
+    <div class="container">
         <app-header></app-header>
-        <router-view></router-view>         
+        <div class="content">
+            <router-view></router-view>              
+        </div>
     </div>
+       
 `

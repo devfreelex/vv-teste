@@ -1,4 +1,5 @@
 const logoWidth = '150px'
+const logoGutter = '15px'
 const logoAndMenuHeight = '75px'
 
 export default () => /*css*/ `
@@ -23,11 +24,12 @@ export default () => /*css*/ `
 
     app-header .header-logo-wrapper {
         width:${logoWidth};
+        margin-left:${logoGutter};
         background:#ccc;
     }
 
     app-header .header-menu-wrapper {
-        width:calc(100% - ${logoWidth});
+        width:calc(100% - ${logoWidth} - ${logoGutter});
         padding:15px;
         text-align:right;
     }
