@@ -1,5 +1,5 @@
 export default ({props, state}) => /*html*/ `
     <div class="btn-wrapper">
-        <button>${props.object.label}</button>
+        <button id="${props.object.id}">${props.object.label}</button>
     </div>
 `
