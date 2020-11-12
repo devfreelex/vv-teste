@@ -19,6 +19,7 @@ export default () => /*css*/ `
         text-align:center;
         color:#666;
         font-weight:600;
+
     }
 
     app-transaction .transaction-form,
@@ -30,6 +31,7 @@ export default () => /*css*/ `
         border-radius:3px;   
         padding:15px;     
         background:#fff;
+
     }
 
     app-transaction .transaction-form {

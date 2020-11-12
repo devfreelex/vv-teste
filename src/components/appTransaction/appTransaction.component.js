@@ -7,12 +7,13 @@ import appExtract from '../appExtract/appExtract.component'
 
 export default () => {
     const tagName = 'app-transaction'
-
+    
     const children = () => ({
         appInput,
         appSelect,
         appExtract
     })
+
 
     return {
         tagName,
