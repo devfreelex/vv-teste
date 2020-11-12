@@ -18,14 +18,14 @@ export default () => /*css*/ `
     }
 
     app-select label {
-        padding:15px 0;
+        padding:15px 0 0 0;
     }
 
     app-select select {
         font-size: .875em;
         text-transform: uppercase;
         padding:15px;
-        border:1px #ebebeb solid;
+        border:1px #ccc solid;
         border-radius:3px;
         color:#666;
         background:#fff;
