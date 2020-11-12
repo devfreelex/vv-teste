@@ -2,7 +2,7 @@ const transactionFragment = (transaction) => /*html*/ `
         <div class="content">
             <div class="content-item">
                 <span>
-                    ${transaction.type === 'compra' ? '-' : '+'}
+                    ${transaction.type === 'purchase' ? '-' : '+'}
                 </span>
                 ${transaction.product}
             </div>
@@ -10,7 +10,7 @@ const transactionFragment = (transaction) => /*html*/ `
         </div>
 `
 
-export default ({props, state, methods}) => {
+export default ({props, state}) => {
 
     return /*html*/`
     <div class="extract-wrapper">
@@ -28,7 +28,7 @@ export default ({props, state, methods}) => {
 
         <div class="footer">
             <div class="footer-item">Total</div>
-            <div class="footer-item">${methods.getTotal()}</div>
+            <div class="footer-item">${state.total}</div>
         </div>
         <div class="note">[lucro]</div>
     </div>

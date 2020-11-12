@@ -7,7 +7,17 @@ export default () => {
 
     const tagName = 'app-extract'
 
-    const state = store.get()
+    const state = {
+        ...store.get(),
+        total: 0
+    }
+
+    const hooks = ({state, methods}) => ({
+        beforeOnInit () {
+            store.subscribe(methods.updateTransactionList)
+            state.set({ total: methods.getTotal()})
+        }
+    })
 
     const methods = ({props, state}) => {
 
@@ -16,27 +26,31 @@ export default () => {
             const transactionList = transactions.filter( transaction => transaction.type === type)
 
             const result = transactionList.reduce((accumulator, transaction) => {
-                return accumulator + transaction.price
+                return +accumulator + +transaction.price
             }, 0)  
 
-
-            if((typeof result) !== 'number') return 0
             return result
-            
+
         }
 
         const getTotal = () => {
-            const { transactions } = state.get()
-            const initialValue = 0
+            const { transactions } = store.get()
 
+            const initialValue = 0
             const purchaseTotal = _calculateTransactionByType('purchase', transactions) || initialValue
             const saleTotal = _calculateTransactionByType('sale', transactions) || initialValue
-            
             return saleTotal - purchaseTotal
+            
+        }
+
+        const updateTransactionList = ({transactions}) => {
+            const total = getTotal()
+            state.set({transactions, total})
         }
 
         return {
-            getTotal
+            getTotal,
+            updateTransactionList
         }
     }
 
@@ -46,7 +60,8 @@ export default () => {
         tagName,
         template,
         styles,
-        methods
+        methods,
+        hooks
     }
 
 }
