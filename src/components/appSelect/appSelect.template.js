@@ -1,11 +1,31 @@
-export default ({props, state}) => /*html*/ `
+export default ({props, state}) => {
+
+    const { currentTransaction: transaction} = state
+
+    console.log(transaction)
+
+    return /*html*/ `
     <div class="input-wrapper">
         <label>
             <span>${props.object.label}</span>
-            <select>
-                <option value="1" selected>Compra</option>
-                <option value="2">Venda</option>
+            <select id="${props.object.id}">
+
+                <option 
+                    value="purchase"
+                    ${transaction.type === 'purchase' ? 'selected' : ''}
+                >
+                    Compra
+                </option>
+
+                <option 
+                    value="sale"
+                    ${transaction.type === 'sale' ? 'selected' : ''}
+                >
+                    Venda
+                </option>
+
             </select>
         </label>
     </div>
 `
+}

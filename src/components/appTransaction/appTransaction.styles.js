@@ -41,5 +41,7 @@ export default () => /*css*/ `
     app-transaction .transaction-extract {
         max-width: calc(100% - 487.5px);
         margin-left:7.5px;
+        background:none;
+        border:0
     }
 `
