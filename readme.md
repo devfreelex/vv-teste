@@ -17,6 +17,7 @@ Cada componente pode ter as propriedades:
 - state (Dados locais do componente)
 - methods (Ações do componente)
 - hooks (São ganchos do ciclo de vida)
+- Children (Componentes filhos)
 
 ### Store, State e reatividade
 
