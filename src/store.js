@@ -5,15 +5,16 @@ const store = storeFactory({
         {
             type:'purchase',
             product:'Material para escritório',
-            price:99.55
+            price:'100.00'
         },
         {
             type:'sale',
             product:'Computador',
-            price:1000
+            price:'200.00'
         }
     ],
-    currentTransaction: {}  
+    currentTransaction: {type:'purchase'},
+    activeInput: null
 })
 
 export { store }

@@ -1,4 +1,4 @@
-const transactionFragment = (transaction) => /*html*/ `
+const transactionFragment = (transaction, methods) => /*html*/ `
         <div class="content">
             <div class="content-item">
                 <span>
@@ -6,11 +6,11 @@ const transactionFragment = (transaction) => /*html*/ `
                 </span>
                 ${transaction.product}
             </div>
-            <div class="content-item">${transaction.price}</div>
+            <div class="content-item">${methods.formatMoney(transaction.price)}</div>
         </div>
 `
 
-export default ({props, state}) => {
+export default ({props, state, methods}) => {
 
     return /*html*/`
     <div class="extract-wrapper">
@@ -21,14 +21,14 @@ export default ({props, state}) => {
 
         ${
             state.transactions.map( transaction => {
-                return transactionFragment(transaction)
+                return transactionFragment(transaction, methods)
             }).join('')
         }
 
 
         <div class="footer">
             <div class="footer-item">Total</div>
-            <div class="footer-item">${state.total}</div>
+            <div class="footer-item">${methods.formatMoney(state.total)}</div>
         </div>
         <div class="note">[lucro]</div>
     </div>

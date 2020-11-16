@@ -2,8 +2,6 @@ export default ({props, state}) => {
 
     const { currentTransaction: transaction} = state
 
-    console.log(transaction)
-
     return /*html*/ `
     <div class="input-wrapper">
         <label>
