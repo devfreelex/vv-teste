@@ -11,6 +11,9 @@ const transactionFragment = (transaction, methods) => /*html*/ `
 `
 
 export default ({props, state, methods}) => {
+    const total = state.total
+    const totalBrl = methods.formatMoney(state.total)
+    const resultTotal = +total < 0 ? `-${totalBrl}` : totalBrl
 
     return /*html*/`
     <div class="extract-wrapper">
@@ -28,9 +31,9 @@ export default ({props, state, methods}) => {
 
         <div class="footer">
             <div class="footer-item">Total</div>
-            <div class="footer-item">${methods.formatMoney(state.total)}</div>
+            <div class="footer-item ${+total < 0 ? `text-red` : 'text-green'}">${resultTotal}</div>
         </div>
-        <div class="note">[lucro]</div>
+        <div class="note">[${+total < 0 ? `deficit` : 'lucro'}]</div>
     </div>
 `
 }

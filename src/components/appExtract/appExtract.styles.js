@@ -49,4 +49,7 @@ export default () => /*css*/ `
         position:relative;
         top: -15px;
     }
+    
+    app-extract .text-red { color: red }
+    app-extract .text-green { color: green }
 `
