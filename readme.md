@@ -1,4 +1,4 @@
-#yMrCaf
+# yMrCaf
 
 O app foi criado utilizando javascript puro.
 Na verdade aproveitei para usar uma biblioteca que eu mesmo criei, assim, pude testá-la.
@@ -21,7 +21,8 @@ Cada componente pode ter as propriedades:
 ### Store, State e reatividade
 
 Como a Store de dados é um objeto o observável, disponibiliza entre outros o método `subscribe` e toda e qualquer modificação em seus dados gera efeitos colaterais.
-Em alguns momentos pode ser útil compartilhar fragmentos de dados com o state local dos componenes, por isso, o component disponibiliza o método `set` no state que pode atualiza os dados e reflete as alterações nos templates dos componentes. 
+
+Em alguns momentos pode ser útil compartilhar fragmentos de dados com o state local dos componentes, por isso, o component disponibiliza o método `set` através do state. Esse método atualiza os dados e reflete as alterações nos templates dos componentes. 
 
 ### Start
 
