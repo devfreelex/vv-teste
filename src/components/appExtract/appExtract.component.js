@@ -2,6 +2,7 @@ import template from './appExtract.template'
 import styles from './appExtract.styles'
 
 import { store } from '../../store'
+import { formatBrl, formatNumber } from '../../utils/formatMoney.directive'
 
 export default () => {
 
@@ -26,7 +27,7 @@ export default () => {
             const transactionList = transactions.filter( transaction => transaction.type === type)
 
             const result = transactionList.reduce((accumulator, transaction) => {
-                return +accumulator + +transaction.price
+                return +accumulator + formatNumber(transaction.price)
             }, 0)  
 
             return result
@@ -48,9 +49,15 @@ export default () => {
             state.set({transactions, total})
         }
 
+        const formatMoney = (value) => {
+            return formatBrl(value)
+          
+        }
+
         return {
             getTotal,
-            updateTransactionList
+            updateTransactionList,
+            formatMoney
         }
     }
 
