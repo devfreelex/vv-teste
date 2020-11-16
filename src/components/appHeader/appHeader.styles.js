@@ -15,6 +15,7 @@ export default () => /*css*/ `
     app-header .header-wrapper {
         width:100%;
         background:#ebebeb;
+        position: relative;
     }
 
     app-header .header-logo-wrapper, 
@@ -26,6 +27,11 @@ export default () => /*css*/ `
         width:${logoWidth};
         margin-left:${logoGutter};
         background:#ccc;
+        text-align:center;
+        text-transform: uppercase;
+        font-weight:bolder;
+        font-size: 1.3em;
+        line-height:75px;
     }
 
     app-header .header-menu-wrapper {

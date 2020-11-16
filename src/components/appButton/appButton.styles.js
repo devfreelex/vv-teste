@@ -7,6 +7,10 @@ export default () => /*css*/ `
         width:100%
     }
 
+    app-button button:disabled {
+        background:#ccc
+    }
+
     app-button button {
         padding:15px;
         margin-top:15px;
