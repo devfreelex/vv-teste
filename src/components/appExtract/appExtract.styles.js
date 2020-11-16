@@ -3,9 +3,6 @@ export default () => /*css*/ `
     app-extract .extract-wrapper,
     app-extract .header,
     app-extract .content,
-    app-extract .header-item,
-    app-extract .content-item,
-    app-extract .footer-item,
     app-extract .note {
         display:block;
         float:left;
@@ -19,19 +16,18 @@ export default () => /*css*/ `
     app-extract .header-item,
     app-extract .content-item,
     app-extract .footer-item {
-        max-width:50%;
+        display:block;
+        float:left;
+        width:calc(100% - 120px);
         padding:15px;
-    }
-
-    app-extract .header-item,
-    app-extract .content-item,
-    app-extract .footer-item {
         text-align:left;
-    } 
+    }
+ 
     
     app-extract .header-item + .header-item,
     app-extract .content-item + .content-item,
     app-extract .footer-item + .footer-item {
+        width:120px;
         text-align: right
     }   
     

@@ -44,4 +44,15 @@ export default () => /*css*/ `
         background:none;
         border:0
     }
+
+    @media all and (max-width:1180px) {
+
+        app-transaction .transaction-form,
+        app-transaction .transaction-extract {
+            width:100%;
+            max-width:100%;
+            margin:0 0 20px 0;
+        }  
+
+    }
 `
